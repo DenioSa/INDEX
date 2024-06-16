@@ -31,10 +31,9 @@ HAVING COUNT(c2.store_id) > 300;
 ### Решение 2
 
 ```
-SELECT *
-FROM payment
-WHERE payment_date  BETWEEN '2005-06-15' and '2005-06-19'
-AND amount > 10;
+SELECT count(`length`) 
+FROM film 
+WHERE `length` > (SELECT AVG(`length`) FROM film );
 ```
 ![Решение 2](https://github.com/DenioSa/SQL-1/blob/9177d277bc0c450eec274b9fc3e9af13ecb02aab/img/2.bmp)`
 
@@ -44,10 +43,11 @@ AND amount > 10;
 ### Решение 3
 
 ```
-SELECT *  
-FROM rental   
-ORDER by rental_date DESC 
-LIMIT 5;
+SELECT DATE_FORMAT(p.payment_date, '%Y-%M') AS data, (sum(p.amount )) AS sum , count((p.rental_id )) AS rent
+FROM payment p 
+GROUP BY data 
+ORDER BY sum DESC
+LIMIT 1;
 ```
 ![Решение 3](https://github.com/DenioSa/SQL-1/blob/9177d277bc0c450eec274b9fc3e9af13ecb02aab/img/3.bmp)`
 
