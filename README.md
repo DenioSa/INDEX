@@ -22,7 +22,7 @@ GROUP BY s1.first_name , s1.last_name , c.city
 HAVING COUNT(c2.store_id) > 300;
 ```
 
-![Решение 1](https://github.com/DenioSa/SQL-1/blob/9177d277bc0c450eec274b9fc3e9af13ecb02aab/img/1.bmp)`
+![Решение 1](https://github.com/DenioSa/SQL-2/blob/4e9d7edd198aba221ad3c0c354ec4298c7c39e29/img/1.bmp)`
 
 ### Задание 2
 
@@ -35,7 +35,7 @@ SELECT count(`length`)
 FROM film 
 WHERE `length` > (SELECT AVG(`length`) FROM film );
 ```
-![Решение 2](https://github.com/DenioSa/SQL-1/blob/9177d277bc0c450eec274b9fc3e9af13ecb02aab/img/2.bmp)`
+![Решение 2](https://github.com/DenioSa/SQL-2/blob/4e9d7edd198aba221ad3c0c354ec4298c7c39e29/img/2.bmp)`
 
 ### Задание 3
 Получите информацию о том, за какой месяц была получена самая большая сумма, и укажите информацию о размере арендной платы за этот месяц.
@@ -49,5 +49,5 @@ GROUP BY data
 ORDER BY sum DESC
 LIMIT 1;
 ```
-![Решение 3](https://github.com/DenioSa/SQL-1/blob/9177d277bc0c450eec274b9fc3e9af13ecb02aab/img/3.bmp)`
+![Решение 3](https://github.com/DenioSa/SQL-2/blob/4e9d7edd198aba221ad3c0c354ec4298c7c39e29/img/3.bmp)`
 
