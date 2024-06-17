@@ -22,10 +22,18 @@ WHERE TABLE_SCHEMA = 'sakila';
 select distinct concat(c.last_name, ' ', c.first_name), sum(p.amount) over (partition by c.customer_id, f.title)
 from payment p, rental r, customer c, inventory i, film f
 where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and r.customer_id = c.customer_id and i.inventory_id = r.inventory_id
-перечислите узкие места;
-Оптимизируйте запрос: внесите корректировки по использованию операторов при необходимости добавления индексов.
+* перечислите узкие места;
+* Оптимизируйте запрос: внесите корректировки по использованию операторов при необходимости добавления индексов.
 
 ### Решение 2
 
+Необходимые данные для вывода располагаются только в таблицах - payment p, customer c. Остальные же (rental r,  inventory i, film f) являются для данного запроса излишней нагрузкой, в том числе и неиспользуемыми данными в конечном выводе. 
+
+```
+SELECT
+	distinct concat(c.last_name, ' ', c.first_name), sum(p.amount) over (partition by c.customer_id) 
+FROM payment p, customer c 
+WHERE DATE(p.payment_date) = '2005-07-30' and p.customer_id = c.customer_id;
+```
 
 
