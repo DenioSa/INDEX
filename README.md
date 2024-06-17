@@ -10,7 +10,7 @@
 ```
 SELECT  
      TABLE_SCHEMA AS 'База данных',
-	 ROUND((SUM(index_length)/(SUM(data_length)+SUM(index_length))*100), 1) AS 'Процентное отношение'
+     ROUND((SUM(index_length)/(SUM(data_length)+SUM(index_length))*100), 1) AS 'Процентное отношение'
 FROM information_schema.TABLES
 WHERE TABLE_SCHEMA = 'sakila';
 ```
