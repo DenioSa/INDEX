@@ -14,6 +14,9 @@ SELECT
 FROM information_schema.TABLES
 WHERE TABLE_SCHEMA = 'sakila';
 ```
+![Решение 1](https://github.com/DenioSa/INDEX/blob/82263a18a84bb3aec789ad950fff6800339198cc/img/1.bmp)`
+
+
 
 ### Задание 2
 
@@ -36,4 +39,4 @@ FROM payment p, customer c
 WHERE DATE(p.payment_date) = '2005-07-30' and p.customer_id = c.customer_id;
 ```
 
-
+![Решение 2](https://github.com/DenioSa/INDEX/blob/82263a18a84bb3aec789ad950fff6800339198cc/img/2.bmp)`
