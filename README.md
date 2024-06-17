@@ -7,8 +7,13 @@
 
 
 ### Решение 1
-
-
+```
+SELECT  
+     TABLE_SCHEMA AS 'База данных',
+	 ROUND((SUM(index_length)/(SUM(data_length)+SUM(index_length))*100), 1) AS 'Процентное отношение'
+FROM information_schema.TABLES
+WHERE TABLE_SCHEMA = 'sakila';
+```
 
 ### Задание 2
 
@@ -23,18 +28,4 @@ where date(p.payment_date) = '2005-07-30' and p.payment_date = r.rental_date and
 ### Решение 2
 
 
-
-### Задание 3
-Получите информацию о том, за какой месяц была получена самая большая сумма, и укажите информацию о размере арендной платы за этот месяц.
-
-### Решение 3
-
-```
-SELECT DATE_FORMAT(p.payment_date, '%Y-%M') AS data, (sum(p.amount )) AS sum , count((p.rental_id )) AS rent
-FROM payment p 
-GROUP BY data 
-ORDER BY sum DESC
-LIMIT 1;
-```
-![Решение 3](https://github.com/DenioSa/SQL-2/blob/4e9d7edd198aba221ad3c0c354ec4298c7c39e29/img/3.bmp)`
 
