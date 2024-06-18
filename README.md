@@ -64,4 +64,4 @@ FROM payment p
 WHERE payment_date >= '2005-07-30' and payment_date < DATE_ADD('2005-07-30', INTERVAL 1 DAY);
 ```
 ![Решение 2.1.-правки](https://github.com/DenioSa/INDEX/blob/cd1826cd03c200bed163ce5a123850380422d7dd/img/3.bmp)`
-![Решение 2.2.-правки](https://github.com/DenioSa/INDEX/blob/cd1826cd03c200bed163ce5a123850380422d7dd/img/4.bmp)`
+![Решение 2.2.-правки](https://github.com/DenioSa/INDEX/blob/5fec25e72ff693dbd904f0b3a1b1dd94071ac20a/img/4.bmp)`
